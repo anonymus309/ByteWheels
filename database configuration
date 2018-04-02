@@ -4,7 +4,9 @@ Download the h2.zip file and extract it
 
 move to directory <your_sytem_Path>/h2/bin
 
-execute h2. bat file
+execute h2.bat file
+
+for linux h2.sh
 
 It will open h2 console in browser
 

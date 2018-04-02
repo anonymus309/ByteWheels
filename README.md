@@ -23,3 +23,9 @@ Steps to configure database is given in database configuration file
 h2.zip file is database
 
 bytewheels.sql is backup of database
+
+Build the project by using command
+
+mvn clean compile install package
+
+once war is generated deploy it in container

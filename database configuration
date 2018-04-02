@@ -1,0 +1,31 @@
+Steps to configure database(windows):
+
+Download the h2.zip file and extract it
+
+move to directory <your_sytem_Path>/h2/bin
+
+execute h2. bat file
+
+It will open h2 console in browser
+
+change only JDBC URL to "jdbc:h2:tcp://localhost/~/bytewheels" from default values displayed
+
+connect to database by pressing connect
+
+Once dtabase is connected 
+
+Type this command to restore backup(bytewheels.sql file is attached)
+
+RUNSCRIPT FROM bytewheels.sql 
+
+NOTE:provide full path for bytewheel.sql for ex: D:\bytewheels.sql
+
+and press run
+
+database is configured now. 
+
+
+
+
+
+

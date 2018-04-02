@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+  <appender name="console" class="org.apache.log4j.ConsoleAppender"> 
+    <param name="Target" value="System.out" />
+    <param name="Threshold" value="TRACE" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{ISO8601} %-5p %C %m%n" />
+    </layout> 
+  </appender>
+  
+  <appender name="fileAppender" class="org.apache.log4j.rolling.RollingFileAppender">
+    <param name="append" value="true" />
+    <param name="encoding" value="UTF-8" />
+    <param name="Threshold" value="TRACE" />
+    <rollingPolicy class="org.apache.log4j.rolling.FixedWindowRollingPolicy">
+      <param name="ActiveFileName"  value="${catalina.home}/logs/byte-wheels.log" />
+      <param name="FileNamePattern" value="${catalina.home}/logs/byte-wheels.%i.log" />
+      <param name="MinIndex" value="0" />
+      <param name="MaxIndex" value="9" />
+    </rollingPolicy>
+    <triggeringPolicy class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+      <param name="MaxFileSize" value="10240000" />
+    </triggeringPolicy>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
+    </layout> 
+  </appender> 
+  
+  <logger name="com.bytemark">
+    <level value="INFO" />
+  </logger>
+ 
+  <root> 
+    <priority value ="INFO" />
+    <appender-ref ref="fileAppender" />
+    <appender-ref ref="console" /> 
+  </root>
+  
+</log4j:configuration>

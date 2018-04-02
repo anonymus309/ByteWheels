@@ -18,3 +18,6 @@ ApI produces JSON
 junit test cases are written for rest services using jersey-client
 
 
+Steps to configure database is given in database configuration file
+h2.zip file is database
+bytewheels.sql is backup of database

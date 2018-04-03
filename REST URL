@@ -1,1 +1,41 @@
 
+URL for Vehicle service:
+
+1. To ger List of vehicles
+
+Method: get
+produce: application/json
+URL: http://localhost:8080/byte-wheels/vehicles
+
+2. TO get details of single vehicle
+Method: get
+produce: application/json
+URL: http://localhost:8080/byte-wheels/vehicles/<vehicle_id>
+
+3. To get vehicle by category
+Method: get
+produce: application/json
+http://localhost:8080/byte-wheels/vehicles/query/?category=<category>
+
+4. List All vehicle that are avialble from the dates given by user
+Method: get
+produce: application/json
+URL: http://localhost:8080/byte-wheels/vehicles/available/?from=<pick_up_date>&to=<drop_off_date>
+
+
+URL for Order service
+
+1 To book a vehicle based on dates given by user
+Method:post
+URL:http://localhost:8080/byte-wheels/orders/
+parameter passed: user_id,vehicle_id,from and to are passed as form value
+
+2. To confirm the order placed 
+Method:put
+URL: http://localhost:8080/byte-wheels/orders/<order_id>/confirm
+
+URL for user service
+
+1. User went to pick up the vehicle and invoice is generated
+Method:put
+URL:  http://localhost:8080/byte-wheels/users/pickup/<order_id>
